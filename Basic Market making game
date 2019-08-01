@@ -1,0 +1,20 @@
+import random
+
+g = int(input("Enter an order of magnitude:"))
+
+number = int(random.uniform(0,1) * (10**g))
+
+bid = 0
+ask = 0
+i = 0
+while (bid != number) or (ask != number):
+    bid = int(input("What price will you buy at?"))
+    ask = int(input("What price will you sell at?"))
+    if bid > number:
+        print("I'll sell to you")
+    elif ask < number:
+        print("I'll buy from you")
+    else:
+        print("I don't want to make any trades")
+    i = i + 1
+print("it took you", i, "guesses")
